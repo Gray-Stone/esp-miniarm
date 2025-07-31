@@ -21,9 +21,9 @@ SDA_PIN = 5
 # PID state
 
 class PIDParam:
-    kp = 1.5
+    kp = 2.0
     ki = 5.0
-    kd = 0.1
+    kd = 0.2
     def __str__(self):
         return f"kp:{self.kp} , ki:{self.ki} , kd:{self.kd}"
 
@@ -132,27 +132,22 @@ def pid_run(target_position ,duration_ms=2000, interval_us = 10000):
         now = time.ticks_us()
         pos = read_encoder()
         
-        # dt in second with safety limits
         dt = time.ticks_diff(now, last_time) / 1000000.0
         err = angle_diff(target_position , pos)
         velocity = angle_diff(pos , last_pos)
 
-        # Integral with anti-windup
-        integral += err * dt
-
-        # Calculate PID terms
         pterm = pid_param.kp * err
 
         derivative = (err - last_error) / dt
-
         if dt > ( (interval_us/1e6) * 0.3):
             dterm = pid_param.kd * derivative
-
         else:
             # Too small a dt, 
             print("dt too small, snapping to zero.")
             dterm = 0
 
+        # Integral with anti-windup
+        integral += err * dt
         iterm = pid_param.ki * integral
         if abs(iterm) > MAX_I_TERM:
             print(f"Warning: I term saturated to {iterm}")
