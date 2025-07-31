@@ -1,0 +1,11 @@
+{
+    "python.languageServer": "None",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingModuleSource": "none"
+    },
+    "python.analysis.typeshedPaths": [
+        ".venv/Lib/site-packages"
+    ],
+    "idf.pythonInstallPath": "/usr/bin/python",
+}
