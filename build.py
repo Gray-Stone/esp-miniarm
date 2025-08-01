@@ -50,6 +50,8 @@ def upload_all(serial_port: str):
                 dst = ":/main.py"
             elif file.name == "boot.py":
                 dst = ":/boot.py"
+            elif file.name == "boot.py":
+                dst = ":/boot.py"
             else:
                 dst = f":/{file.name}"
 
