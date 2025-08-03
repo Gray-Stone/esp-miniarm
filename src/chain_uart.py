@@ -15,7 +15,7 @@ START = b'\xAA'
 END = b'\xA5'
 
 # === IDENTITY ===
-NODE_ID = 1  # Give each board a different ID (1, 2, 3)
+NODE_ID = 2  # Give each board a different ID (1, 2, 3)
 
 # === Message to inject (only node 1 will send) ===
 def inject_message():

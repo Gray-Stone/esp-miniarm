@@ -26,13 +26,13 @@ def connect_wifi(ssid, password):
     print('✅ Connected:', wlan.ifconfig())
     return wlan
 
-import os
+# import os
 
-if 'config.py' in os.listdir():
-    import config
-    connect_wifi(config.SSID , config.PASSWORD)
-else:
-    print("⚠️ config.py not found.")
+# if 'config.py' in os.listdir():
+#     import config
+#     connect_wifi(config.SSID , config.PASSWORD)
+# else:
+#     print("⚠️ config.py not found.")
 
 # if __name__ == "__main__":
 
@@ -55,7 +55,7 @@ else:
 
 
 
-import chain_uart
+# import chain_uart
 
-print("Starting Main Loop")
-chain_uart.main_loop()
+# print("Starting Main Loop")
+# chain_uart.main_loop()

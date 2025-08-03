@@ -1,5 +1,6 @@
 import machine
 import time
+from machine import SPI, Pin, Timer
 
 from machine import Pin
 
@@ -46,8 +47,121 @@ def setup():
     pwm_fwd.duty(0)
     pwm_rev.duty(0)
 
-    i2c = machine.I2C(0, scl=machine.Pin(SCL_PIN), sda=machine.Pin(SDA_PIN))
+    # i2c = machine.I2C(0, scl=machine.Pin(SCL_PIN), sda=machine.Pin(SDA_PIN))
+
+    init_mt6701()
     print("Hardware initialized.")
+
+
+
+
+
+
+
+# MT6701 SSI (24-bit: 14 angle + 4 status + 6 CRC) via SPI on ESP32/ESP32-C3
+# - SPI provides the clock burst (uses HW, typically DMA under the hood)
+# - CRC polynomial: x^6 + x + 1 (MSB-first over 18 bits: angle[13:0], status[3:0])
+#   Ref: MT6701 datasheet SSI format & timing.
+
+
+# ===== User config =====
+SPI_ID   = 1          # ESP32/ESP32-C3: pick a usable SPI bus id
+PIN_SCK  = 4          # to MT6701 CLK
+PIN_MISO = 5          # from MT6701 DO
+PIN_CS   = 6          # to MT6701 CSN (active low)
+SPI_BAUD = 1_000_00  # 1 MHz (datasheet allows higher if wiring is good)
+SPI_MODE = 1          # CPOL=0, CPHA=1: sample on falling edge (data changes on rising)
+
+BITS_POS   = 14
+BITS_STAT  = 4
+BITS_CRC   = 6
+FRAME_BITS = BITS_POS + BITS_STAT + BITS_CRC  # 24
+DEG_PER_TURN = 360.0
+
+# ===== Init =====
+
+def init_mt6701():
+    global cs, spi
+    cs  = Pin(PIN_CS, Pin.OUT, value=1)
+    spi = SPI(SPI_ID, baudrate=SPI_BAUD, polarity=0, phase=1,
+            sck=Pin(PIN_SCK), mosi=None, miso=Pin(PIN_MISO))
+
+# ===== CRC-6 (poly x^6 + x + 1) helper =====
+# Polynomial (including top bit) is 0b1_000011 = 0x43; use lower 6 bits (0x03) in feedback form.
+def crc6_mt6701_msb_first(value_18bits):
+    rem = 0        # 6-bit remainder
+    poly_lo = 0x03 # polynomial without the x^6 term
+    for i in range(17, -1, -1):  # process 18 bits MSB->LSB
+        bit = (value_18bits >> i) & 1
+        fb = ((rem >> 5) & 1) ^ bit
+        rem = ((rem << 1) & 0x3F)
+        if fb:
+            rem ^= poly_lo
+    return rem  # 6-bit CRC
+
+# ===== Low-level: read one 24-bit SSI frame =====
+def _read_frame24():
+    buf = bytearray(3)
+    cs.value(0)
+    # small setup/hold margins; datasheet margins are sub-µs, so 1 µs is safe
+    time.sleep_us(30)
+    spi.readinto(buf)   # clocks 24 SCK edges; hardware handles shifting
+    time.sleep_us(1)
+    cs.value(1)
+    return (buf[0] << 16) | (buf[1] << 8) | buf[2]
+
+# ===== Parse + CRC check =====
+def read_mt6701():
+    raw24 = _read_frame24()
+    # Bits: [23:10]=angle(14), [9:6]=status(4), [5:0]=crc(6)  (MSB-first)
+    angle14 = (raw24 >> 10) & 0x3FFF
+    status4 = (raw24 >> 6)  & 0x000F
+    crc_rx  =  raw24        & 0x003F
+
+    # Compute CRC over the 18-bit concatenation of angle+status (MSB-first)
+    data18 = (angle14 << 4) | status4
+    crc_calc = crc6_mt6701_msb_first(data18)
+    crc_ok = (crc_calc == crc_rx)
+
+    # Convert to degrees (0..360)
+    angle_deg = (angle14 * DEG_PER_TURN) / (1 << BITS_POS)
+    return angle_deg, angle14, status4, crc_rx, crc_calc, crc_ok
+
+# ===== Example: poll at 500 Hz and print when CRC passes =====
+
+def loop_mt6707_read(duration_s = 1):
+    start_time = time.ticks_ms()    
+    while time.ticks_diff(time.ticks_ms(), start_time) < duration_s * 1000:
+        ang_deg, angle14, stat, crc_rx, crc_calc, ok = read_mt6701()
+        if ok:
+            print("deg=%.3f  angle14=%5d  status=0x%X  CRC ok" % (ang_deg, angle14, stat))
+        else:
+            print("deg=%.3f  angle14=%5d  status=0x%X  CRC ok" % (ang_deg, angle14, stat))
+            print("CRC FAIL: rx=%02X calc=%02X  status=0x%X" % (crc_rx, crc_calc, stat))
+        time.sleep(0.002)  # 2 ms
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # ========== Encoder and Motor Utilities ==========
 
