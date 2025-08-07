@@ -17,7 +17,7 @@
     },
     "selection_filter": {
       "dimensions": true,
-      "footprints": true,
+      "footprints": false,
       "graphics": true,
       "keepouts": true,
       "lockedItems": false,
@@ -50,7 +50,7 @@
       "conflict_shadows",
       "shapes"
     ],
-    "visible_layers": "ffffffff_ffffffff_fffffff5_fffdff5f",
+    "visible_layers": "ffffffff_ffffffff_fffffff5_ffffff5d",
     "zone_display_mode": 0
   },
   "git": {
