@@ -13531,7 +13531,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1c969c28-3671-4e1a-86ab-e7c2d502cbfe")
-		(property "Reference" "TH1"
+		(property "Reference" "J_NTC1"
 			(at 271.018 56.642 90)
 			(effects
 				(font
@@ -13585,7 +13585,7 @@
 		(instances
 			(project ""
 				(path "/c8f8ac5e-0b71-42b6-88d1-0b81b7fe4cbf"
-					(reference "TH1")
+					(reference "J_NTC1")
 					(unit 1)
 				)
 			)
