@@ -14351,15 +14351,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C7467249"
-			(at 199.39 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "4abaa4d4-1ae6-409c-bc3b-e69001d5f200")
 		)
@@ -14554,15 +14545,6 @@
 		)
 		(property "Description" "Brushed DC Motor Driver, PWM Control, 45V, 3.6A, Current limiting, HTSOP-8"
 			(at 228.6 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C75864"
-			(at 230.7433 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15011,15 +14993,6 @@
 		)
 		(property "Description" "Zero-Drift, Bidirectional Current/Power Monitor (0-26V) With I2C Interface, SOT-23-8"
 			(at 199.39 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C87469"
-			(at 207.264 44.958 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17696,15 +17669,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C844973"
-			(at 180.34 128.2699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "2fa28eae-85b0-4df7-9809-a5553b539d08")
 		)
@@ -18186,15 +18150,6 @@
 		)
 		(property "Description" ""
 			(at 259.08 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C499458"
-			(at 259.08 111.506 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20089,15 +20044,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C97253"
-			(at 166.37 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "6"
 			(uuid "bfc8adf5-905f-4e2a-8bb1-f4c8b9a53435")
 		)
@@ -21260,15 +21206,6 @@
 		)
 		(property "Description" "802.11 b/g/n Wi­Fi and Bluetooth 5 module, ESP32­C3 SoC, RISC­V microprocessor, On-board antenna"
 			(at 142.24 53.975 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C2934560"
-			(at 136.144 28.702 0)
 			(effects
 				(font
 					(size 1.27 1.27)
