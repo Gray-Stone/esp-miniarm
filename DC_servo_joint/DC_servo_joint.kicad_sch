@@ -15525,6 +15525,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C_Polarized_Small")
+		(at 184.15 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "50edf5c2-f66c-4ac4-a947-7814d0c39962")
+		(property "Reference" "C15"
+			(at 186.69 37.5538 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "47uF"
+			(at 186.69 40.0938 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm"
+			(at 184.15 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 184.15 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Polarized capacitor, small symbol"
+			(at 184.15 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "08a007e5-8fb9-47f0-86f3-fa4abf145fce")
+		)
+		(pin "2"
+			(uuid "44e38ac8-f007-4fc3-9314-4a53d824a622")
+		)
+		(instances
+			(project ""
+				(path "/c8f8ac5e-0b71-42b6-88d1-0b81b7fe4cbf"
+					(reference "C15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 180.34 64.77 0)
 		(mirror y)
@@ -17559,77 +17629,6 @@
 			(project "DC_servo_joint"
 				(path "/c8f8ac5e-0b71-42b6-88d1-0b81b7fe4cbf"
 					(reference "#PWR015")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Polarized_Small")
-		(at 184.15 39.37 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "95757e53-8754-4c7d-8ee5-cebe2b08da74")
-		(property "Reference" "C11"
-			(at 181.61 37.5538 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "47uf"
-			(at 181.61 40.0938 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:CP_Elec_6.3x5.4"
-			(at 184.15 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 184.15 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Polarized capacitor, small symbol"
-			(at 184.15 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "cb6b114a-f232-4adf-a205-bcef4fa2f263")
-		)
-		(pin "2"
-			(uuid "5cbdf549-4853-45a7-a7e0-a4a0b989c185")
-		)
-		(instances
-			(project ""
-				(path "/c8f8ac5e-0b71-42b6-88d1-0b81b7fe4cbf"
-					(reference "C11")
 					(unit 1)
 				)
 			)
