@@ -14903,7 +14903,7 @@
 				)
 			)
 		)
-		(property "Value" "INA219BxD"
+		(property "Value" "INA219AxDCN"
 			(at 199.39 56.642 90)
 			(effects
 				(font
