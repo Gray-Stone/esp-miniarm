@@ -3163,7 +3163,7 @@
 			)
 		)
 		(property "Value" "ESP32-C3-WROOM-02"
-			(at 0 -7.975 270)
+			(at -0.55 4.225 270)
 			(layer "B.SilkS")
 			(uuid "b6033d33-6003-437f-b950-7bca41529a71")
 			(effects
@@ -22433,6 +22433,19 @@
 			)
 		)
 	)
+	(gr_text "Ca(OH)2"
+		(at 137.125 83.625 270)
+		(layer "B.SilkS")
+		(uuid "1a1754d3-9500-47cb-a813-29b136e2d457")
+		(effects
+			(font
+				(size 2.5 2.5)
+				(thickness 0.35)
+				(italic yes)
+			)
+			(justify left bottom mirror)
+		)
+	)
 	(gr_text "GND"
 		(at 134.375 93.95 -0)
 		(layer "B.SilkS")
@@ -22513,6 +22526,19 @@
 			(font
 				(size 1 1)
 				(thickness 0.15)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "LimeRobotLab"
+		(at 133.875 83.225 270)
+		(layer "B.SilkS")
+		(uuid "97e5b159-ff4d-4d09-a328-7c976077f1ed")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.2)
+				(italic yes)
 			)
 			(justify left bottom mirror)
 		)
