@@ -9314,7 +9314,7 @@
 	)
 	(text "Cap selection:\n* 25V X5R for 12V rails\n* 16V X5R for 3.3V railis"
 		(exclude_from_sim no)
-		(at 29.464 177.292 0)
+		(at 30.988 185.166 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10286,6 +10286,16 @@
 			(type default)
 		)
 		(uuid "491aded4-8a79-4cf3-9974-57966d854292")
+	)
+	(wire
+		(pts
+			(xy 114.3 44.45) (xy 127 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "498651fb-7e41-423e-b98e-aa9b3248bb5d")
 	)
 	(wire
 		(pts
@@ -11289,16 +11299,6 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 46.99) (xy 127 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b644b528-efe9-436e-aadb-0e95d89698fb")
-	)
-	(wire
-		(pts
 			(xy 243.84 48.26) (xy 243.84 49.53)
 		)
 		(stroke
@@ -12267,16 +12267,6 @@
 		)
 		(uuid "7efdb038-fe65-4570-839c-7c7ada02e58b")
 	)
-	(label "pwm1_io2"
-		(at 114.3 46.99 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "85288719-447f-4d64-adb7-f07c21d18d11")
-	)
 	(label "Mot1"
 		(at 248.92 39.37 0)
 		(effects
@@ -12356,6 +12346,16 @@
 			(justify left bottom)
 		)
 		(uuid "bb71637f-d97b-4610-aa2d-059aff61a9e0")
+	)
+	(label "pwm1_io2"
+		(at 114.3 44.45 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ced3ec67-2e02-4003-9f6a-e892ba91da15")
 	)
 	(label "RS485A"
 		(at 33.02 105.41 0)
@@ -16001,7 +16001,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 162.56 96.52 0)
+		(at 73.66 156.21 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -16010,7 +16010,7 @@
 		(fields_autoplaced yes)
 		(uuid "5488dafb-88dc-458a-80a1-272b85746615")
 		(property "Reference" "H1"
-			(at 165.1 95.2499 0)
+			(at 76.2 154.9399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16019,7 +16019,7 @@
 			)
 		)
 		(property "Value" "M3 Mount"
-			(at 165.1 97.7899 0)
+			(at 76.2 157.4799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16028,7 +16028,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965"
-			(at 162.56 96.52 0)
+			(at 73.66 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16037,7 +16037,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 162.56 96.52 0)
+			(at 73.66 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16046,7 +16046,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 162.56 96.52 0)
+			(at 73.66 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20193,7 +20193,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Manufacturing:Tooling Hole, PCM_JLCPCB, 1.152mm")
-		(at 134.62 99.06 0)
+		(at 45.72 158.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -20202,7 +20202,7 @@
 		(fields_autoplaced yes)
 		(uuid "be51a923-d5c5-4b55-9d16-1d9151bafc32")
 		(property "Reference" "H5"
-			(at 135.89 97.7899 0)
+			(at 46.99 157.4799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20211,7 +20211,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 135.89 100.3299 0)
+			(at 46.99 160.0199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20220,7 +20220,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:Hole_Tooling_JLCPCB"
-			(at 134.62 99.06 0)
+			(at 45.72 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20229,7 +20229,7 @@
 			)
 		)
 		(property "Datasheet" "https://jlcpcb.com/help/article/How-to-add-tooling-holes-for-PCB-assembly-order"
-			(at 134.62 99.06 0)
+			(at 45.72 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20238,7 +20238,7 @@
 			)
 		)
 		(property "Description" "1. Two or three tooling holes should be added on the PCB, they should be placed in opposite corners of the PCB and as far apart from one another as practical. 2. Tooling holes should be 1.152mm(45.4mil) round non-plated holes with 0.148mm solder mask expansion. 3. Tooling holes are only required for PCB assembly orders. 4. Please try to add tooling holes on empty space and keep them away from traces. If there is no enough room, you can add them to the copper area."
-			(at 134.62 99.06 0)
+			(at 45.72 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21151,7 +21151,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 153.67 101.6 0)
+		(at 64.77 161.29 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -21160,7 +21160,7 @@
 		(fields_autoplaced yes)
 		(uuid "cf021dcf-8969-498c-9a8f-bad75d6a1fc7")
 		(property "Reference" "H2"
-			(at 156.21 100.3299 0)
+			(at 67.31 160.0199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21169,7 +21169,7 @@
 			)
 		)
 		(property "Value" "M3 Mount"
-			(at 156.21 102.8699 0)
+			(at 67.31 162.5599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21178,7 +21178,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965"
-			(at 153.67 101.6 0)
+			(at 64.77 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21187,7 +21187,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 153.67 101.6 0)
+			(at 64.77 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21196,7 +21196,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 153.67 101.6 0)
+			(at 64.77 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21344,7 +21344,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Manufacturing:Tooling Hole, PCM_JLCPCB, 1.152mm")
-		(at 140.97 101.6 0)
+		(at 52.07 161.29 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -21353,7 +21353,7 @@
 		(fields_autoplaced yes)
 		(uuid "d5288258-f330-4246-845b-f33ef05e4506")
 		(property "Reference" "H4"
-			(at 142.24 100.3299 0)
+			(at 53.34 160.0199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21362,7 +21362,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 142.24 102.8699 0)
+			(at 53.34 162.5599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21371,7 +21371,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:Hole_Tooling_JLCPCB"
-			(at 140.97 101.6 0)
+			(at 52.07 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21380,7 +21380,7 @@
 			)
 		)
 		(property "Datasheet" "https://jlcpcb.com/help/article/How-to-add-tooling-holes-for-PCB-assembly-order"
-			(at 140.97 101.6 0)
+			(at 52.07 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21389,7 +21389,7 @@
 			)
 		)
 		(property "Description" "1. Two or three tooling holes should be added on the PCB, they should be placed in opposite corners of the PCB and as far apart from one another as practical. 2. Tooling holes should be 1.152mm(45.4mil) round non-plated holes with 0.148mm solder mask expansion. 3. Tooling holes are only required for PCB assembly orders. 4. Please try to add tooling holes on empty space and keep them away from traces. If there is no enough room, you can add them to the copper area."
-			(at 140.97 101.6 0)
+			(at 52.07 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21865,7 +21865,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 170.18 101.6 0)
+		(at 81.28 161.29 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -21874,7 +21874,7 @@
 		(fields_autoplaced yes)
 		(uuid "dbd66605-d3ec-4a3e-b846-3f8f2573ad3f")
 		(property "Reference" "H3"
-			(at 172.72 100.3299 0)
+			(at 83.82 160.0199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21883,7 +21883,7 @@
 			)
 		)
 		(property "Value" "M3 Mount"
-			(at 172.72 102.8699 0)
+			(at 83.82 162.5599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21892,7 +21892,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965"
-			(at 170.18 101.6 0)
+			(at 81.28 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21901,7 +21901,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 170.18 101.6 0)
+			(at 81.28 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21910,7 +21910,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 170.18 101.6 0)
+			(at 81.28 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21995,7 +21995,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Manufacturing:Tooling Hole, PCM_JLCPCB, 1.152mm")
-		(at 140.97 96.52 0)
+		(at 52.07 156.21 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -22004,7 +22004,7 @@
 		(fields_autoplaced yes)
 		(uuid "df3d1262-b9ae-47f0-8a00-cba7747655f9")
 		(property "Reference" "H6"
-			(at 142.24 95.2499 0)
+			(at 53.34 154.9399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22013,7 +22013,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 142.24 97.7899 0)
+			(at 53.34 157.4799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22022,7 +22022,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:Hole_Tooling_JLCPCB"
-			(at 140.97 96.52 0)
+			(at 52.07 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22031,7 +22031,7 @@
 			)
 		)
 		(property "Datasheet" "https://jlcpcb.com/help/article/How-to-add-tooling-holes-for-PCB-assembly-order"
-			(at 140.97 96.52 0)
+			(at 52.07 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22040,7 +22040,7 @@
 			)
 		)
 		(property "Description" "1. Two or three tooling holes should be added on the PCB, they should be placed in opposite corners of the PCB and as far apart from one another as practical. 2. Tooling holes should be 1.152mm(45.4mil) round non-plated holes with 0.148mm solder mask expansion. 3. Tooling holes are only required for PCB assembly orders. 4. Please try to add tooling holes on empty space and keep them away from traces. If there is no enough room, you can add them to the copper area."
-			(at 140.97 96.52 0)
+			(at 52.07 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
