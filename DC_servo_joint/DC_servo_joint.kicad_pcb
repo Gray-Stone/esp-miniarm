@@ -3145,7 +3145,7 @@
 		(descr "DFN1006-2L-RD footprint")
 		(tags "DFN1006-2L-RD footprint C22395516")
 		(property "Reference" "D4"
-			(at 0.05 0.2 0)
+			(at 0.175 -0.075 0)
 			(layer "B.SilkS")
 			(uuid "e7597502-6dd1-494f-90ea-84f94cb56060")
 			(effects
@@ -3426,7 +3426,7 @@
 			)
 		)
 		(property "Value" "ESP32-C3-WROOM-02"
-			(at -0.55 4.225 270)
+			(at -0.2 3.05 270)
 			(layer "B.SilkS")
 			(uuid "83734c84-5071-4679-b67f-23a23bbf3cab")
 			(effects
@@ -3459,6 +3459,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C2934560"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "60c71213-a530-41dc-9350-c700e3f77a9b")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -6271,7 +6284,7 @@
 		(descr "Through hole straight socket strip, 2x03, 2.54mm pitch, double cols (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 2x03 2.54mm double row")
 		(property "Reference" "J_USB1"
-			(at 2.3 3.53 0)
+			(at 2.3 -0.07 0)
 			(layer "B.SilkS")
 			(uuid "15e3fe09-0fe8-47fa-9369-1500e121f8c2")
 			(effects
@@ -10417,6 +10430,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C7467249"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5490ac0a-a838-4cd3-8db1-4324b84dcc79")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/2919a0ed-9b07-491d-b0bc-6d7dfb367e2b")
 		(sheetname "/")
@@ -11133,6 +11159,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5d7092eb-20d4-4ea4-b9c8-6e4f4d321245")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C844973"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "99e46f09-911d-4b15-9670-b6d4684f5e0f")
 			(effects
 				(font
 					(size 1 1)
@@ -23144,7 +23183,7 @@
 		)
 	)
 	(gr_text "JLCJLCJLCJLC"
-		(at 100.2 98.475 90)
+		(at 100.3 98.475 90)
 		(layer "F.SilkS")
 		(uuid "547c19d8-170c-44f4-9d24-f45c3ed75200")
 		(effects
@@ -23249,6 +23288,18 @@
 			)
 		)
 	)
+	(gr_text "5V"
+		(at 116.325 89.725 0)
+		(layer "B.SilkS")
+		(uuid "02f4d957-9a55-448f-9c0a-30b2b53fe881")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom mirror)
+		)
+	)
 	(gr_text "Ca(OH)2"
 		(at 137.125 83.625 270)
 		(layer "B.SilkS")
@@ -23258,6 +23309,18 @@
 				(size 2.5 2.5)
 				(thickness 0.35)
 				(italic yes)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "D-"
+		(at 120.95 86.25 0)
+		(layer "B.SilkS")
+		(uuid "2677ebda-b660-4e32-a577-ee2e790f9248")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
 			)
 			(justify left bottom mirror)
 		)
@@ -23298,6 +23361,18 @@
 			(justify left bottom mirror)
 		)
 	)
+	(gr_text "DC Servo Joint v0.9"
+		(at 131.75 83.075 270)
+		(layer "B.SilkS")
+		(uuid "775eca51-ba33-489f-9d3f-64f852a7123b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom mirror)
+		)
+	)
 	(gr_text "12V"
 		(at 103.1 97.25 -0)
 		(layer "B.SilkS")
@@ -23306,6 +23381,18 @@
 			(font
 				(size 1 1)
 				(thickness 0.15)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "GND"
+		(at 125.4 89.025 0)
+		(layer "B.SilkS")
+		(uuid "84da7270-fcec-4b2d-8362-8a6031cbda78")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
 			)
 			(justify left bottom mirror)
 		)
@@ -23399,6 +23486,18 @@
 		(at 116.4 59.4 90)
 		(layer "B.SilkS")
 		(uuid "e1113170-73a2-4962-b7a4-3786060ed1b6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "D+"
+		(at 123.625 86.15 0)
+		(layer "B.SilkS")
+		(uuid "e815eea5-06a5-4809-bde1-fcd28055f414")
 		(effects
 			(font
 				(size 1 1)
@@ -25205,6 +25304,14 @@
 		(uuid "9c0e9361-fa20-43de-9def-f4830e8e8df4")
 	)
 	(via
+		(at 101.35 71.35)
+		(size 0.6)
+		(drill 0.3)
+		(layers "F.Cu" "B.Cu")
+		(net 3)
+		(uuid "9e806d2f-123e-459d-92d3-621c9cf71872")
+	)
+	(via
 		(at 124.35 55.25)
 		(size 0.6)
 		(drill 0.3)
@@ -25777,7 +25884,7 @@
 		(uuid "8e087c05-fd29-436b-8363-10dce92af099")
 	)
 	(via
-		(at 100.75 87.85)
+		(at 100.75 87.05)
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
@@ -25853,14 +25960,6 @@
 		(layers "F.Cu" "B.Cu")
 		(net 4)
 		(uuid "e1a4f271-87a4-4fe5-b4e9-18b4dadf4b17")
-	)
-	(via
-		(at 100.8 86.3)
-		(size 0.6)
-		(drill 0.3)
-		(layers "F.Cu" "B.Cu")
-		(net 4)
-		(uuid "f16bb104-7cf2-4f71-ba26-27c95b0a298b")
 	)
 	(segment
 		(start 105.6 98.7)
