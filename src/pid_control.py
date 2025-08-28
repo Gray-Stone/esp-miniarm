@@ -14,7 +14,7 @@ PWM_FREQUENCEY=2000
 AS5600_ADDR = 0x36
 
 # Motor control pins (adjust as needed)
-PWM_PIN_FWD = 2
+PWM_PIN_FWD = 1
 PWM_PIN_REV = 3
 SCL_PIN = 4
 SDA_PIN = 5
