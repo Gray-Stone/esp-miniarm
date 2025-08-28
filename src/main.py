@@ -54,6 +54,15 @@ def connect_wifi(ssid, password):
 # pc.test_pid(increment_angle=800)
 
 
+pwm_fwd = machine.PWM(machine.Pin(PWM_PIN_FWD), freq=330 , duty=100)
+time.sleep(1)
+pwm_fwd = machine.PWM(machine.Pin(PWM_PIN_FWD), freq=660 , duty=100)
+time.sleep(1)
+pwm_fwd = machine.PWM(machine.Pin(PWM_PIN_FWD), freq=1200 , duty=100)
+time.sleep(1)
+pwm_fwd.duty(0)
+
+
 
 # import chain_uart
 
