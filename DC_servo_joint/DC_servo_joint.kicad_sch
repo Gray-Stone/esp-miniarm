@@ -9232,6 +9232,19 @@
 		)
 		(uuid "4523c3cc-663d-49ca-b3cd-8d44d434d8ed")
 	)
+	(text "pwm1_io2 needs rename"
+		(exclude_from_sim no)
+		(at 112.014 16.002 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+				(color 194 0 0 1)
+			)
+		)
+		(uuid "4c2fd2d6-ad79-4230-be5a-c4c072f11fb3")
+	)
 	(text "TODO double check cap values"
 		(exclude_from_sim no)
 		(at 131.572 155.702 0)
@@ -9241,6 +9254,19 @@
 			)
 		)
 		(uuid "5ce4b4d1-717f-4b54-9c64-902ca564e6e3")
+	)
+	(text "Encoder PINOUT is WRONG!"
+		(exclude_from_sim no)
+		(at 261.62 90.678 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+				(color 194 0 0 1)
+			)
+		)
+		(uuid "686b2a70-0181-40a4-8657-6769d98ca9c7")
 	)
 	(text "TODO: JLC C28323 \n0805 50V X7R\n"
 		(exclude_from_sim no)
