@@ -11,27 +11,25 @@ BUILD_DIR = Path("build")
 MPY_CROSS = "mpy-cross"
 MPREMOTE = "mpremote"
 
-def flatten_name(path: Path) -> str:
-    parts = path.relative_to(SRC_DIR).with_suffix("").parts
-    return "_".join(parts) + ".mpy"
-
 def compile_all():
     BUILD_DIR.mkdir(parents=True, exist_ok=True)
 
-    print("🔨 Compiling .py files to flattened .mpy (except main.py)")
+    print("🔨 Compiling .py files to .mpy (except main.py), keeping folder structure")
 
     for src_path in SRC_DIR.rglob("*.py"):
         rel_path = src_path.relative_to(SRC_DIR)
 
         # Special handling for main.py (copy instead of compile)
         if rel_path == Path("main.py"):
-            dst_path = BUILD_DIR / "main.py"
+            dst_path = BUILD_DIR / rel_path
+            dst_path.parent.mkdir(parents=True, exist_ok=True)
             print(f"\n📄 Copying main.py → {dst_path}")
             shutil.copy2(src_path, dst_path)
             continue
 
-        out_name = flatten_name(src_path)
-        dst_path = BUILD_DIR / out_name
+        # Change extension from .py → .mpy
+        dst_path = (BUILD_DIR / rel_path).with_suffix(".mpy")
+        dst_path.parent.mkdir(parents=True, exist_ok=True)
 
         print(f"\n🛠️  Compiling {src_path} → {dst_path}")
         try:
