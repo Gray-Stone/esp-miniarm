@@ -1,9 +1,9 @@
 import pid_control as pc
 import time
 
-
 import network
 import time
+
 
 def connect_wifi(ssid, password):
     wlan = network.WLAN(network.STA_IF)
@@ -25,6 +25,7 @@ def connect_wifi(ssid, password):
 
     print('✅ Connected:', wlan.ifconfig())
     return wlan
+
 
 # import os
 
@@ -53,16 +54,13 @@ def connect_wifi(ssid, password):
 
 # pc.test_pid(increment_angle=800)
 
-
-pwm_fwd = machine.PWM(machine.Pin(PWM_PIN_FWD), freq=330 , duty=100)
+pwm_fwd = machine.PWM(machine.Pin(PWM_PIN_FWD), freq=330, duty=100)
 time.sleep(1)
-pwm_fwd = machine.PWM(machine.Pin(PWM_PIN_FWD), freq=660 , duty=100)
+pwm_fwd = machine.PWM(machine.Pin(PWM_PIN_FWD), freq=660, duty=100)
 time.sleep(1)
-pwm_fwd = machine.PWM(machine.Pin(PWM_PIN_FWD), freq=1200 , duty=100)
+pwm_fwd = machine.PWM(machine.Pin(PWM_PIN_FWD), freq=1200, duty=100)
 time.sleep(1)
 pwm_fwd.duty(0)
-
-
 
 # import chain_uart
 

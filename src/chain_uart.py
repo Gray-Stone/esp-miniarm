@@ -17,12 +17,14 @@ END = b'\xA5'
 # === IDENTITY ===
 NODE_ID = 2  # Give each board a different ID (1, 2, 3)
 
+
 # === Message to inject (only node 1 will send) ===
 def inject_message():
     payload = b'Hello from Node [%d]' % NODE_ID
-    framed = START + bytes([b' ' , NODE_ID]) + payload + END
+    framed = START + bytes([b' ', NODE_ID]) + payload + END
     uart.write(framed)
     print("[TX] Injected:", framed)
+
 
 # === Process incoming data ===
 def process_uart():
@@ -49,12 +51,12 @@ def process_uart():
                 buf.append(b[0])
                 print("[RX]", bytes(buf))
                 time.sleep(0.01)
-                if NODE_ID ==1 :
+                if NODE_ID == 1:
                     # Kill the loop
                     return True
                 else:
                     uart.write(buf)  # Forward it
-                    print("[TX] Forwarded content:" , buf)
+                    print("[TX] Forwarded content:", buf)
                     return False
             else:
                 buf.append(b[0])
@@ -77,4 +79,3 @@ def main_loop():
         if (process_uart()):
             break
         time.sleep(0.01)
-

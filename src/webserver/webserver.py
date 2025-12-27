@@ -178,6 +178,7 @@ WEB_SYSTEM_INFO = """
 </html>
 """
 
+
 # ==================== 配置管理 ====================
 def load_config():
     try:
@@ -186,10 +187,12 @@ def load_config():
     except:
         return {"ssid": "", "password": ""}
 
+
 def save_config(ssid, password):
     config = {"ssid": ssid, "password": password}
     with open('config.json', 'w') as f:
         ujson.dump(config, f)
+
 
 # ==================== 网络连接 ====================
 def connect_wifi():
@@ -220,6 +223,7 @@ def connect_wifi():
 
     return wlan, False
 
+
 def start_ap_mode():
     # AP 模式不启用 mDNS（按你的要求）
     ap = network.WLAN(network.AP_IF)
@@ -229,13 +233,15 @@ def start_ap_mode():
     print("AP IP:", ap.ifconfig()[0])
     return ap
 
+
 def setup_network():
     wlan, connected = connect_wifi()
     if not connected:
         print("Starting AP mode for configuration")
         ap = start_ap_mode()
         return ap, True  # 返回 AP 接口与“AP 模式标志”
-    return wlan, False   # 返回 STA 接口与“非 AP 模式标志”
+    return wlan, False  # 返回 STA 接口与“非 AP 模式标志”
+
 
 # ==================== 仅在 STA 模式尝试启用内置 mDNS ====================
 def try_start_builtin_mdns(hostname: str, wlan_iface):
@@ -289,18 +295,22 @@ def try_start_builtin_mdns(hostname: str, wlan_iface):
 
     return ok
 
+
 # ==================== 机械臂控制 ====================
 class RoboticArm:
+
     def __init__(self):
         print("RoboticArm initialized")
-    
+
     def move_to_position(self, position):
         print("Moving to position:", position)
-    
+
     def emergency_stop(self):
         print("EMERGENCY STOP ACTIVATED!")
 
+
 arm = RoboticArm()
+
 
 def execute_program(program_id):
     try:
@@ -321,16 +331,18 @@ def execute_program(program_id):
     except Exception as e:
         return "Error executing program: %s" % str(e)
 
+
 # ==================== Web服务器 ====================
 class WebServer:
+
     def __init__(self):
         self.ap_mode = False
         self.wlan, self.ap_mode = setup_network()
         self.start_time = utime.time()
-    
+
     def get_uptime(self):
         return utime.time() - self.start_time
-    
+
     def get_system_info(self):
         try:
             device_id = ubinascii.hexlify(machine.unique_id()).decode()
@@ -353,7 +365,7 @@ class WebServer:
             "storage": storage_info,
             "uptime": int(self.get_uptime())
         }
-    
+
     def parse_request(self, request):
         lines = request.split('\r\n')
         if lines:
@@ -363,17 +375,17 @@ class WebServer:
                 path = first_line[1].split('?')[0]
                 return method, path
         return None, None
-    
+
     def handle_request(self, client_socket, addr):
         try:
             request = client_socket.recv(1024).decode('utf-8')
             if not request:
                 client_socket.close()
                 return
-            
+
             method, path = self.parse_request(request)
             print("Request:", method, path, "from", addr)
-            
+
             if method == 'GET':
                 if path == '/' or path == '/control':
                     self.send_response(client_socket, WEB_CONTROL, 'text/html')
@@ -401,7 +413,7 @@ class WebServer:
                 self.send_response(client_socket, 'Error: %s' % str(e), 'text/plain', 500)
             except:
                 client_socket.close()
-    
+
     def handle_execute(self, client_socket, request):
         lines = request.split('\r\n')
         first_line = lines[0]
@@ -421,7 +433,7 @@ class WebServer:
         else:
             response = {'status': 'error', 'message': 'No program specified'}
         self.send_json_response(client_socket, response)
-    
+
     def handle_config(self, client_socket, request):
         try:
             content_length = 0
@@ -443,7 +455,7 @@ class WebServer:
         except Exception as e:
             response = {'status': 'error', 'message': 'Config error: %s' % str(e)}
             self.send_json_response(client_socket, response)
-    
+
     def send_response(self, client_socket, content, content_type='text/html', status_code=200):
         response = "HTTP/1.1 %d OK\r\n" % status_code
         response += "Content-Type: %s\r\n" % content_type
@@ -451,10 +463,10 @@ class WebServer:
         response += content
         client_socket.send(response.encode('utf-8'))
         client_socket.close()
-    
+
     def send_json_response(self, client_socket, data):
         self.send_response(client_socket, ujson.dumps(data), 'application/json')
-    
+
     def run(self):
         server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         try:
@@ -463,7 +475,7 @@ class WebServer:
             pass
         server_socket.bind(('0.0.0.0', 80))
         server_socket.listen(5)
-        
+
         print("Web server started on port 80")
         if self.ap_mode:
             print("AP Mode: Connect to 'RoboticArm_AP' with password '12345678'")
@@ -485,12 +497,14 @@ class WebServer:
                 print("Server error:", e)
                 utime.sleep(1)
 
+
 # ==================== 主程序 ====================
 def main():
     gc.collect()
     print("Free memory:", gc.mem_free())
     server = WebServer()
     server.run()
+
 
 if __name__ == "__main__":
     main()
